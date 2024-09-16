@@ -62,19 +62,15 @@ Then I realised the number of possible games isn't actually that large.
 
 We can caluclate it using the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient).
 
-First we count the number of ways we can arrage the 6 'o' characters.
+First we count the number of ways we can arrage the 6 `o` characters.
 
-```latex
-$\displaystyle \frac{(16!) }{ (10!) \cdot (6!) } = 8008$
-```
+$$ \displaystyle \frac{(16!) }{ (10!) \cdot (6!) } = 8008 $$
 
-Then, we have 10 remaining empty spaces, and we want to arrange the 5 'f' characters into them.
+Then, we have 10 remaining empty spaces, and we want to arrange the 5 `f` characters into them.
 
-```latex
-$\displaystyle \frac{(10!) }{ (5!) \cdot (5!) } = 252$
-```
+$$ \displaystyle \frac{(10!) }{ (5!) \cdot (5!) } = 252 $$
 
-And the remaining 5 'x' characters can only go in the empty spaces.
+And the remaining 5 `x` characters can only go in the empty spaces.
 
 This means the total number of possible games of fox is `8008 * 252 = 2018016`.
 
