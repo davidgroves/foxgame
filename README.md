@@ -62,7 +62,7 @@ Then I realised the number of possible games isn't actually that large.
 
 We can caluclate it using the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient).
 
-First we count the number of ways we can arrage the 6 `o` characters.
+First we count the number of ways we can arrange the 6 `o` characters.
 
 $$ \displaystyle \frac{(16!) }{ (10!) \cdot (6!) } = 8008 $$
 
