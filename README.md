@@ -40,15 +40,16 @@ It will run your machine at near 100% CPU use while it computes the results.
 
 ## Examples
 
-```
+```shell
 $ time cargo run --release -- --attempts 500000000
-    Finished `release` profile [optimized] target(s) in 0.01s
+   Compiling fox_game v0.1.0 (/home/dwg/CODE/fox_game)
+    Finished `release` profile [optimized] target(s) in 0.36s
      Running `target/release/fox_game --attempts 500000000`
-Wins: 64477441
-Loses: 435522559
-Win Percentage: 0.128954882
+Wins: 64,477,198
+Loses: 435,522,802
+Win Percentage: 12.8954%
 
-real    0m3.634s
-user    1m52.034s
-sys     0m0.201s
+real    0m4.020s
+user    1m54.730s
+sys     0m0.234s
 ```

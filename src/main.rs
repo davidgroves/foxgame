@@ -1,5 +1,6 @@
 use clap::Parser;
 use clap_derive::Parser;
+use num_format::{SystemLocale, ToFormattedString};
 use num_cpus;
 use rand::{seq::SliceRandom, thread_rng};
 use rayon::prelude::*;
@@ -95,7 +96,8 @@ fn main() {
         })
         .sum();
 
-    println!("Wins: {}", args.attempts - loses);
-    println!("Loses: {}", loses);
-    println!("Win Percentage: {}", (args.attempts as f64 - loses as f64) / args.attempts as f64);
+    let locale = SystemLocale::default().unwrap();
+    println!("Wins: {}", (args.attempts - loses).to_formatted_string(&locale));
+    println!("Loses: {}", loses.to_formatted_string(&locale));
+    println!("Win Percentage: {:.4}%", ((args.attempts as f64 - loses as f64) / args.attempts as f64 * 100.0));
 }
