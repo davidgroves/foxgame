@@ -15,7 +15,7 @@ This is a very quick and dirty program to get answers.
 - This uses "wordsearch rules, so the word can be vertical, horizontal, or diagonal.
 - It can also be backwards, so if the first three characters were 'fox' you would lose, but so would 'xof'
 
-## Method
+## Method 1: Monte Carlo Simulation.
 
 - Use numbers to represent the characters. 0 = f, 1 = o, 2 = x.
 - The grid is a 16 long vector of numnbers. Position 0 is the top left, and position 15 is the bottom right.
@@ -53,3 +53,54 @@ real    0m4.020s
 user    1m54.730s
 sys     0m0.234s
 ```
+
+----
+
+## Method 2: Exhaustive Search
+
+Then I realised the number of possible games isn't actually that large.
+
+We can caluclate it using the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient).
+
+First we count the number of ways we can arrage the 6 'o' characters.
+
+```latex
+$\displaystyle \frac{(16!) }{ (10!) \cdot (6!) } = 8008$
+```
+
+Then, we have 10 remaining empty spaces, and we want to arrange the 5 'f' characters into them.
+
+```latex
+$\displaystyle \frac{(10!) }{ (5!) \cdot (5!) } = 252$
+```
+
+And the remaining 5 'x' characters can only go in the empty spaces.
+
+This means the total number of possible games of fox is `8008 * 252 = 2018016`.
+
+## Search all games in Python.
+
+Then I wrote a python program to calculate all these possible games. As I only have a relatively small and finite
+number of games to check, I didn't feel the need to use a more performant language, and so wrote this in a language
+that I am more familiar with.
+
+Usefully the [more-itertools](https://more-itertools.readthedocs.io/en/stable/) library has a function to calculate
+all the unique permutations of a list in a sufficiently performant way.
+
+Running that Python script we get.
+
+```shell
+$ time python exhaustive_solver.py 
+Wins: 260,253
+Loses: 1,757,763
+Win Percentage: 12.896478521478521
+
+real    0m1.441s
+user    0m1.326s
+sys     0m0.107s
+```
+
+And obviously, this is exhaustive, so will always give the same results, and the fully correct answer.
+
+We can check the total number of games `260253 + 1757763 = 2018016` matches our mathematical result
+using the binomial coefficient from earlier, which it does.
