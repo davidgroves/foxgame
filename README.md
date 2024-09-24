@@ -12,7 +12,7 @@ This is a very quick and dirty program to get answers.
 - You have 5 'f' characters, 5 'x' characters and 6 'o' characters.
 - You place them RANDOMLY on the grid.
 - You win if nowhere on the grid spells the word 'fox'.
-- This uses "wordsearch rules, so the word can be vertical, horizontal, or diagonal.
+- This uses "wordsearch rules", so the word can be vertical, horizontal, or diagonal.
 - It can also be backwards, so if the first three characters were 'fox' you would lose, but so would 'xof'
 
 ## Method 1: Monte Carlo Simulation.
@@ -62,7 +62,7 @@ Then I realised the number of possible games isn't actually that large.
 
 We can caluclate it using the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient).
 
-First we count the number of ways we can arrage the 6 `o` characters.
+First we count the number of ways we can arrange the 6 `o` characters.
 
 $$ \displaystyle \frac{(16!) }{ (10!) \cdot (6!) } = 8008 $$
 
