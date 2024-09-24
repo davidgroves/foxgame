@@ -4,7 +4,10 @@ I was asked to calculate the probability of winning the "fox" game, based
 on the youtube shorts by [AlexCheddarUK](https://www.youtube.com/@AlexCheddarUK), such as
 [Attempt 7](https://www.youtube.com/shorts/5CARrKOvtFI).
 
-This is a very quick and dirty program to get answers.
+This is a very quick and dirty program to get the answer.
+
+Alex has a new video [exploring many more interesting stats](https://www.youtube.com/watch?v=6jovMx_c1SU)
+and I'd recommend checking it out if you like this kind of nerdy detail.
 
 ## Rules
 
