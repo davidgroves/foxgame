@@ -29,32 +29,32 @@ BAD_LOCATIONS = [
     [7, 10, 13],
     [2, 5, 8],
     # Horizontal backwards
-    [2, 1, 0],
-    [3, 2, 1],
-    [6, 5, 4],
-    [7, 6, 5],
-    [10, 9, 8],
-    [11, 10, 9],
-    [14, 13, 12],
-    [15, 14, 13],
+    list(reversed([0, 1, 2])),
+    list(reversed([1, 2, 3])),
+    list(reversed([4, 5, 6])),
+    list(reversed([5, 6, 7])),
+    list(reversed([8, 9, 10])),
+    list(reversed([9, 10, 11])),
+    list(reversed([12, 13, 14])),
+    list(reversed([13, 14, 15])),
     # Vertical backwards
-    [2, 4, 0],
-    [6, 8, 4],
-    [3, 5, 1],
-    [7, 9, 5],
-    [10, 6, 2],
-    [14, 10, 6],
-    [11, 7, 3],
-    [15, 11, 7],
+    list(reversed([0, 4, 8])),
+    list(reversed([4, 8, 12])),
+    list(reversed([1, 5, 9])),
+    list(reversed([5, 9, 13])),
+    list(reversed([2, 6, 10])),
+    list(reversed([6, 10, 14])),
+    list(reversed([3, 7, 11])),
+    list(reversed([7, 11, 15])),
     # Diagonal backwards
-    [10, 5, 0],
-    [15, 10, 5],
-    [11, 6, 1],
-    [14, 9, 4],
-    [9, 6, 3],
-    [12, 9, 6],
-    [13, 10, 7],
-    [8, 5, 2],
+    list(reversed([0, 5, 10])),
+    list(reversed([5, 10, 15])),
+    list(reversed([1, 6, 11])),
+    list(reversed([4, 9, 14])),
+    list(reversed([3, 6, 9])),
+    list(reversed([6, 9, 12])),
+    list(reversed([7, 10, 13])),
+    list(reversed([2, 5, 8])),
 ]
 
 def game_loss(grid: list[str]) -> bool:
@@ -62,6 +62,20 @@ def game_loss(grid: list[str]) -> bool:
         if grid[location[0]] == "f" and grid[location[1]] == "o" and grid[location[2]] == "x":
             return True
     return False
+
+def show_grid(grid: list[int]) -> None:
+    print(BAD_LOCATIONS)
+    print(grid)
+    print("=========")
+    print(f"|{'x' if 0 in grid else ' '}|{'x' if 1 in grid else ' '}|{'x' if 2 in grid else ' '}|{'x' if 3 in grid else ' '}|")
+    print("---------")
+    print(f"|{'x' if 4 in grid else ' '}|{'x' if 5 in grid else ' '}|{'x' if 6 in grid else ' '}|{'x' if 7 in grid else ' '}|")
+    print("---------")
+    print(f"|{'x' if 8 in grid else ' '}|{'x' if 9 in grid else ' '}|{'x' if 10 in grid else ' '}|{'x' if 11 in grid else ' '}|")
+    print("---------")
+    print(f"|{'x' if 12 in grid else ' '}|{'x' if 13 in grid else ' '}|{'x' if 14 in grid else ' '}|{'x' if 15 in grid else ' '}|")
+    print("=========")
+    
 
 def main():
     patterns = ["f"] * 5 + ["o"] * 6 + ["x"] * 5
