@@ -47,7 +47,7 @@ $ time cargo run --release -- --attempts 500000000
      Running `target/release/fox_game --attempts 500000000`
 Wins: 64,477,198
 Loses: 435,522,802
-Win Percentage: 12.8954%
+Win Percentage: 12.65184%
 
 real    0m4.020s
 user    1m54.730s
@@ -87,9 +87,9 @@ Running that Python script we get.
 
 ```shell
 $ time python exhaustive_solver.py 
-Wins: 260,253
-Loses: 1,757,763
-Win Percentage: 12.896478521478521
+Wins: 255,304
+Loses: 1,762,712
+Win Percentage: 12.65123765123765 %
 
 real    0m1.441s
 user    0m1.326s
